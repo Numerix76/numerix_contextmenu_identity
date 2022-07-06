@@ -15,9 +15,6 @@ if CLIENT then --DON'T TOUCH THIS
 	--Put "usesteamprofile" to set the Profile Steam Logo of the player
 	ContextMenuIdentity.Settings.Logo = "https://mtxserv.com/forums/data/avatars/l/49/49891.jpg?1499247238"
 
-	--Please be sure to change the name of this at the first config and when you update the config if you use a web image. (don't remove the .png)
-	ContextMenuIdentity.Settings.LogoName = "your_server_name/logo1.png"
-
 	--Name of the server
 	ContextMenuIdentity.Settings.Server = "mtxServ"
 

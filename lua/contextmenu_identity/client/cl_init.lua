@@ -84,9 +84,9 @@ hook.Add("OnContextMenuOpen", "Numerix_ContextMenu_Open", function()
 			ContextImage:SetPos( ContextMenuSecondaire:GetWide()/2 - ContextImage:GetWide()/2, 10 )
 			ContextImage:SetPlayer( ply, 128 )
 		elseif string.sub(ContextMenuIdentity.Settings.Logo, 1, 4) == "http" then
-			ContextMenuIdentity.GetImage(ContextMenuIdentity.Settings.Logo, ContextMenuIdentity.Settings.LogoName, function(url, filename)
+			ContextMenuIdentity.GetImage(ContextMenuIdentity.Settings.Logo, "logo.png", function(url, filename)
 				if !IsValid(ContextMenuSecondaire) then return end
-				
+
 				ContextImage = vgui.Create( "DImage", ContextMenuSecondaire )
 				ContextImage:SetSize( ScrW()/15, ScrW()/15 )
 				ContextImage:SetPos( ContextMenuSecondaire:GetWide()/2 - ContextImage:GetWide()/2, 10 )
