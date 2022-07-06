@@ -4,7 +4,7 @@ ContextMenu Identity made by Numerix (https://steamcommunity.com/id/numerix/)
 
 --------------------------------------------------------------------------------------------------]]
 
-ContextMenuIdentity.Settings.VersionDefault = "1.0.4" --DON'T TOUCH THIS
+ContextMenuIdentity.Settings.VersionDefault = "1.0.5" --DON'T TOUCH THIS
 
 --Change the language
 ContextMenuIdentity.Settings.Language = "en"
@@ -58,13 +58,13 @@ if CLIENT then --DON'T TOUCH THIS
 			Value = function(ply) return "SteamID :"..ply:SteamID() end,
 		},
 		{
-			Enabled = true,
+			Enabled = DarkRP, -- Check if gamemode is DarkRP
 			Value = function(ply) return "Money :"..ply:getDarkRPVar("money").."$" end,
 		},
 		{
 			Enabled = true,
 			Value = function(ply) 
-				if DarkRP.disabledDefaults["modules"]["hungermod"] then
+				if !DarkRP and true or DarkRP.disabledDefaults["modules"]["hungermod"] then
 					return "Health : "..ply:Health().."  Amor : "..ply:Armor() 
 				else
 					return "Health : "..ply:Health().."  Amor : "..ply:Armor().."  Food : "..math.Round(ply:getDarkRPVar( "Energy" ))
