@@ -11,7 +11,7 @@ ContextMenuIdentity.Language = ContextMenuIdentity.Language or {}
 
 local FileSystem = "contextmenu_identity"
 local AddonName = "Identity ContextMenu"
-local Version = "1.0.7"
+local Version = "1.0.8"
 local FromWorkshop = false
 
 if SERVER then
