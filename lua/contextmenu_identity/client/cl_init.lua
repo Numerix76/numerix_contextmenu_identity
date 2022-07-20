@@ -217,7 +217,7 @@ hook.Add("OnContextMenuOpen", "Numerix_ContextMenu_Open", function()
 				local icon = Material( v.Icon )
 
 				if string.sub(v.Icon, 1, 4) == "http" then
-					ContextMenuIdentity.GetImage(v.Icon, v.IconName, function(url, filename)
+					ContextMenuIdentity.GetImage(v.Icon, "button"..k..".png", function(url, filename)
 						v.Icon = filename
 						icon = Material( v.Icon )
 					end)

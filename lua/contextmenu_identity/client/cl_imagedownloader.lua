@@ -1,6 +1,7 @@
 local directory = "numerix_images/contextmenu_identity"
 
-local alreadyDownload = false
+local fileDownloaded = {}
+
 function ContextMenuIdentity.GetImage(url, filename, callback)
     local destination = string.Explode("/", filename, true)
     local filename = destination[#destination]
@@ -13,11 +14,11 @@ function ContextMenuIdentity.GetImage(url, filename, callback)
     end
     file.CreateDir(finaldirectory)
 
-    if !alreadyDownload then
-        http.Fetch(url, 
+    if !fileDownloaded[filename] || !file.Exists(finaldirectory.."/"..filename, "DATA") then
+        http.Fetch(url,
             function(data)
                 file.Write(finaldirectory.."/"..filename, data)
-                alreadyDownload = true
+                fileDownloaded[filename] = true
 
                 if callback then
                     callback(url, "data/"..finaldirectory.."/"..filename)
